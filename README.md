@@ -221,7 +221,7 @@ npm run deploy
 
 Генератор уникальных ID для JavaScript
 
-[ссылка на пакет](https://github.com/ai/nanoid/blob/HEAD/README.ru.md#nano-id) [ссылка на лекцию]
+[ссылка на пакет](https://github.com/ai/nanoid/blob/HEAD/README.ru.md#nano-id)
 
 `npm install --save nanoid`
 
@@ -241,4 +241,18 @@ import { nanoid } from 'nanoid';
 
 ```js
 import classNames from 'classnames';
+```
+
+### Emotion
+
+Виблиотека для стилизации JS
+
+[ссылка на пакет](https://emotion.sh/docs/introduction)
+
+[ссылка на лекцию](https://www.youtube.com/watch?v=Itl8A6g4p4Y&ab_channel=GoIT)
+
+`npm i @emotion/styled @emotion/react`
+
+```js
+import styled from '@emotion/styled';
 ```
