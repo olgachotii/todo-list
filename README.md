@@ -256,3 +256,11 @@ import classNames from 'classnames';
 ```js
 import styled from '@emotion/styled';
 ```
+
+### node-sass
+
+Для того, чтобы подключить к React проекту предпроцессор Sass достаточно воспользоваться пакетом
+node-sass. Данный пакет позволяет без дополнительных установок добавить Sass в ваш React проект. Для
+его установки достаточно воспользоваться командой
+
+`npm install node-sass`
