@@ -4,7 +4,7 @@ import { nanoid } from 'nanoid';
 import Container from './components/Container';
 import TodoList from './components/TodoList';
 import TodoEditor from './components/TodoEditor';
-import Filter from './components/Filter';
+import TodoFilter from './components/TodoFilter';
 // import Form from './components/Form';
 import initialTodos from './todos.json';
 
@@ -33,19 +33,6 @@ class App extends Component {
   };
 
   toggleCompleted = todoId => {
-    // this.setState(prevState => ({
-    //   todos: prevState.todos.map(todo => {
-    //     if (todo.id === todoId) {
-    //       return {
-    //         ...todo,
-    //         completed: !todo.completed,
-    //       };
-    //     }
-
-    //     return todo;
-    //   }),
-    // }));
-
     this.setState(({ todos }) => ({
       todos: todos.map(todo =>
         todo.id === todoId ? { ...todo, completed: !todo.completed } : todo,
@@ -87,7 +74,7 @@ class App extends Component {
 
         <TodoEditor onSubmit={this.addTodo} />
 
-        <Filter value={filter} onChange={this.changeFilter} />
+        <TodoFilter value={filter} onChange={this.changeFilter} />
 
         <TodoList
           todos={visibleTodos}
