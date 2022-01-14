@@ -6,11 +6,11 @@ import TodoList from './components/TodoList';
 import TodoEditor from './components/TodoEditor';
 import TodoFilter from './components/TodoFilter';
 // import Form from './components/Form';
-import initialTodos from './todos.json';
+// import initialTodos from './todos.json';
 
 class App extends Component {
   state = {
-    todos: initialTodos,
+    todos: [],
     filter: '',
   };
 
@@ -56,6 +56,26 @@ class App extends Component {
 
     return todos.reduce((total, todo) => (todo.completed ? total + 1 : total), 0);
   };
+
+  // не стрелочная ф-ция, ф метод класса
+  componentDidUpdate(prevProps, prevState) {
+    console.log('componentDidUpdate');
+
+    if (this.state.todos !== prevState.todos) {
+      console.log('обновилось поле todos');
+      localStorage.setItem('todos', JSON.stringify(this.state.todos));
+    }
+  }
+
+  componentDidMount() {
+    const todos = localStorage.getItem('todos');
+    const parsedTodos = JSON.parse(todos);
+
+    if (parsedTodos) {
+      console.log(parsedTodos);
+      this.setState({ todos: parsedTodos });
+    }
+  }
 
   render() {
     const { todos, filter } = this.state;
